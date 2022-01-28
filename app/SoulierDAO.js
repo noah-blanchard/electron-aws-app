@@ -24,7 +24,7 @@ class SoulierDAO{
           });
     }
     chercher(id, action){
-      fetch("" + '?id=' + id , {mode:'cors'})
+      fetch("https://rm69nms37l.execute-api.us-east-1.amazonaws.com/default/chercher-par-id-soulier" + '?id=' + id , {mode:'cors'})
         .then(response => response.json())
         .then(data =>
           {
