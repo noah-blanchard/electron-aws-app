@@ -6,8 +6,8 @@
 }
 
 @font-face {
-  font-family: 'Hello Christmas Icon';
-  src: url('font/hello_christmas_icons/Hello-Christmas-Icon-trial.ttf')  format('truetype');
+  font-family: 'Fetish BTA';
+  src: url('font/shoes/WC_Fetish_Bta.ttf')  format('truetype');
 }
 
 :root {
@@ -49,7 +49,7 @@ html {
 }
 
 #liste-soulier li::before {
-   content:"G";
+   content:"K";
    text-align:center;
    color:var(--theme-rouge);
    font-size:1.25rem;
@@ -59,7 +59,7 @@ html {
    height:1rem;
    width:1rem;
 
-   font-family:'Hello Christmas Icon', arial;
+   font-family:'Fetish BTA', arial;
 
 
 }
@@ -113,17 +113,17 @@ textarea {
 
 .page {
   position:relative;
-  background-color:var(--theme-bleu-pale);
+  background-color:var(--theme-vert);
   padding:5%;
   min-height: 100vh;
   box-sizing: border-box;
 
-  background-image:url(illustration/personne-cadeau.png);
+  background-image:url(illustration/vendeur.png);
   background-repeat:no-repeat;
   background-size:cover;
-  background-position:right bottom;
+  background-position:left bottom;
   background-attachment:fixed;
-  background-size: 40%;
+  background-size: 20%;
   color:var(--theme-rouge);
 }
 
@@ -133,7 +133,7 @@ textarea {
   font-size:2rem;
   font-weight:normal;
   line-height:1.8rem;
-  color:var(--theme-vert);
+  color:var(--theme-blanc);
   text-shadow: 2px 2px var(--theme-blanc);
 
 }
