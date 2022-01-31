@@ -1,28 +1,28 @@
-class VueListeCadeau{
+class VueListeSoulier{
     constructor(){
-      this.html = document.getElementById("html-vue-liste-cadeau").innerHTML;
-      this.listeCadeauDonnee = null;
+      this.html = document.getElementById("html-vue-liste-soulier").innerHTML;
+      this.listeSoulierDonnee = null;
     }
   
-    initialiserListeCadeau(listeCadeauDonnee){
-      this.listeCadeauDonnee = listeCadeauDonnee;
+    initialiserListeSoulier(listeSoulierDonnee){
+      this.listeSoulierDonnee = listeSoulierDonnee;
     }
   
     afficher(){
       document.getElementsByTagName("body")[0].innerHTML = this.html;
   
-      let listeCadeau = document.getElementById("liste-soulier");
-      const listeCadeauItemHTML = listeCadeau.innerHTML;
-      let listeCadeauHTMLRemplacement = "";
+      let listeSoulier = document.getElementById("liste-soulier");
+      const listeSoulierItemHTML = listeSoulier.innerHTML;
+      let listeSoulierHTMLRemplacement = "";
   
-      for(var numeroCadeau in this.listeCadeauDonnee){
-        let listeCadeauItemHTMLRemplacement = listeCadeauItemHTML;
-        listeCadeauItemHTMLRemplacement = listeCadeauItemHTMLRemplacement.replace("{Cadeau.id}",this.listeCadeauDonnee[numeroCadeau].id);
-        listeCadeauItemHTMLRemplacement = listeCadeauItemHTMLRemplacement.replace("{Cadeau.nom}",this.listeCadeauDonnee[numeroCadeau].nom);
-        listeCadeauHTMLRemplacement += listeCadeauItemHTMLRemplacement;
+      for(var numeroSoulier in this.listeSoulierDonnee){
+        let listeSoulierItemHTMLRemplacement = listeSoulierItemHTML;
+        listeSoulierItemHTMLRemplacement = listeSoulierItemHTMLRemplacement.replace("{Soulier.id}",this.listeSoulierDonnee[numeroSoulier].id);
+        listeSoulierItemHTMLRemplacement = listeSoulierItemHTMLRemplacement.replace("{Soulier.nom}",this.listeSoulierDonnee[numeroSoulier].nom);
+        listeSoulierHTMLRemplacement += listeSoulierItemHTMLRemplacement;
       }
   
-      listeCadeau.innerHTML = listeCadeauHTMLRemplacement;
+      listeSoulier.innerHTML = listeSoulierHTMLRemplacement;
     }
   
   }

@@ -1,6 +1,6 @@
 class SoulierDAO{
     lister(action){
-      fetch("https://llnsnv1i2c.execute-api.us-east-1.amazonaws.com/default/lister", {mode:'cors'})
+      fetch("https://xmbtkfs4xi.execute-api.us-east-1.amazonaws.com/default/lister", {mode:'cors'})
         .then(response => response.json())
         .then(data =>
           {
@@ -24,24 +24,25 @@ class SoulierDAO{
           });
     }
     chercher(id, action){
-      fetch("https://rm69nms37l.execute-api.us-east-1.amazonaws.com/default/chercher-par-id-soulier" + '?id=' + id , {mode:'cors'})
+      fetch("https://ulofr45hp0.execute-api.us-east-1.amazonaws.com/default/chercher-par-id" + '?id=' + id , {mode:'cors'})
         .then(response => response.json())
         .then(data =>
           {
             console.log(data);
-            let soulier = new Soulier(data[position].nom,
-                                        data[position].marque,
-                                        data[position].description,
-                                        data[position].couleur,
-                                        data[position].materiaux,
-                                        data[position].pourQui,
-                                        data[position].pointure,
-                                        data[position].fermeture,
-                                        data[position].id);
+            let soulier = new Soulier(data.nom,
+                                        data.marque,
+                                        data.description,
+                                        data.couleur,
+                                        data.materiaux,
+                                        data.pourQui,
+                                        data.pointure,
+                                        data.fermeture,
+                                        data.id);
             action(soulier);
           });
     }
     ajouter(soulier, action){
+      console.log(JSON.stringify(soulier));
       fetch("https://r6t9t63tck.execute-api.us-east-1.amazonaws.com/default/ajouter",
         {
           method: 'POST',
