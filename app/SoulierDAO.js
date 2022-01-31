@@ -1,6 +1,6 @@
 class SoulierDAO{
     lister(action){
-      fetch("", {mode:'cors'})
+      fetch("https://llnsnv1i2c.execute-api.us-east-1.amazonaws.com/default/lister", {mode:'cors'})
         .then(response => response.json())
         .then(data =>
           {
@@ -42,7 +42,7 @@ class SoulierDAO{
           });
     }
     ajouter(soulier, action){
-      fetch("",
+      fetch("https://r6t9t63tck.execute-api.us-east-1.amazonaws.com/default/ajouter",
         {
           method: 'POST',
           headers: {
