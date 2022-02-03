@@ -145,6 +145,14 @@ textarea {
   border-radius:var(--theme-bordure-rondeur);
   padding:0.25rem;
 }
+.page h3 {
+  text-align:left;
+  font-size:0.5rem;
+  font-weight:normal;
+  line-height:0.1rem;
+  color:var(--theme-blanc);
+  text-shadow: 0.5px 0.5px var(--theme-blanc);
+}
 
 
 .action{
