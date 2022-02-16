@@ -1,6 +1,3 @@
-# projet-initial
+# Serverless App - Liste de souliers
 
-### Membres du groupe
- - Arthaud Morin
- - Nolann Devignes
- - Noah Blanchard
+## Le projet
