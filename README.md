@@ -69,3 +69,11 @@ Exemple de données contenues dans le fichie JSON.
     }
 ]
 ```
+### API Gateway
+
+Pour ce projet, des déclencheurs ont été mis en place pour les fonctions Lambdas.
+Ce sont des API à l'écoute des requêtes HTTP.
+* L'API de la fonction d'ajout écoute les requêtes POST
+* L'API des fonctions pour lister et chercher par id écoute les requêtes GET
+Lorsque ces portes d'entrée reçoivent une requête, elle déclenche les fonctions Lambda et
+renvoient du contenu au client (l'application électron).
