@@ -34,4 +34,4 @@ Trois fonctions Lambda (Node.js) sont stockées sur AWS. Pour chacune, un décle
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" alt="drawing" width="100" style="margin:70px"/>
 <img src="https://images.squarespace-cdn.com/content/v1/51814c87e4b0c1fda9c1fc50/1528473310893-RH0HG7R5C0QURMFQJBSU/600px-AWS_Lambda_logo.svg.png?format=500w" alt="drawing" width="100" style="margin:70px"/>
-<img src="https://miro.medium.com/max/401/0*rOjzHpnCXl4iklVC.png" alt="drawing" width="300" style="margin:70px"/>
+<img src="https://s3-us-west-2.amazonaws.com/assertible/blog/aws-api-gateway-icon.png" alt="drawing" width="100" style="margin:70px"/>
