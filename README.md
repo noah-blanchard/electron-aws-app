@@ -35,3 +35,37 @@ Trois fonctions Lambda (Node.js) sont stockées sur AWS. Pour chacune, un décle
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" alt="drawing" width="100" style="margin:70px"/>
 <img src="https://images.squarespace-cdn.com/content/v1/51814c87e4b0c1fda9c1fc50/1528473310893-RH0HG7R5C0QURMFQJBSU/600px-AWS_Lambda_logo.svg.png?format=500w" alt="drawing" width="100" style="margin:70px"/>
 <img src="https://s3-us-west-2.amazonaws.com/assertible/blog/aws-api-gateway-icon.png" alt="drawing" width="100" style="margin:70px"/>
+
+### Bucket S3
+
+La liste de soulier est stockée dans un compartiment S3, dans un fichier JSON.
+Ce fichier est lu ou édité selon la fonction lambda déclenchée.
+
+Exemple de données contenues dans le fichie JSON.
+
+```json
+[
+    {
+        "nom": "SuperFast",
+        "marque": "Geox",
+        "description": "les chaussures qui respirent",
+        "couleur": "bleu",
+        "materiaux": "plastique 90%, coton 10%",
+        "pourQui": "enfant",
+        "pointure": "32-37",
+        "fermeture": "zip",
+        "id": 0
+    },
+    {
+        "nom": "Air Max 97",
+        "marque": "Nike",
+        "description": "Ceci est une chaussure Nike",
+        "couleur": "rouge",
+        "materiaux": "plastique 80%, coton 20%",
+        "pourQui": "homme",
+        "pointure": "40-45",
+        "fermeture": "lacet",
+        "id": 1
+    }
+]
+```
