@@ -24,3 +24,14 @@ En cliquant sur un des souliers listé sur la première page, on accède à la p
 
 Il est possible d'ajouter un nouveau soulier à la liste qui sera alors sauvegardé dans le compartiment S3.
 L'utilisateur entre toutes les informations relatives au soulier et valide avec le bouton prévu à cet effet.
+
+## Backend serverless avec AWS
+
+### Fonctions Lambda
+
+Trois fonctions Lambda (Node.js) sont stockées sur AWS. Pour chacune, un déclencheur du type API Gateway est activé,
+à l'écoute des requêtes GET ou POST.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" alt="drawing" width="100" style="margin:70px"/>
+<img src="https://images.squarespace-cdn.com/content/v1/51814c87e4b0c1fda9c1fc50/1528473310893-RH0HG7R5C0QURMFQJBSU/600px-AWS_Lambda_logo.svg.png?format=500w" alt="drawing" width="100" style="margin:70px"/>
+<img src="https://miro.medium.com/max/401/0*rOjzHpnCXl4iklVC.png" alt="drawing" width="100" style="margin:70px"/>
