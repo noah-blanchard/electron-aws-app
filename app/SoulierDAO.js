@@ -1,9 +1,13 @@
 class SoulierDAO{
-    lister(action){
-      fetch("https://xmbtkfs4xi.execute-api.us-east-1.amazonaws.com/default/lister", {mode:'cors'})
-        .then(response => response.json())
-        .then(data =>
-          {
+  constructor(){
+    this.URL = 'http://ec2-52-90-86-49.compute-1.amazonaws.com/souliers/'
+  }
+
+  lister(action){
+    fetch(this.URL + 'lister.php')
+      .then(response => response.json())
+      .then(data =>
+        {
             console.log(data);
             let listeSoulier = [];
             for(let position in data){
@@ -22,12 +26,13 @@ class SoulierDAO{
             }
             action(listeSoulier);
           });
-    }
-    chercher(id, action){
-      fetch("https://ulofr45hp0.execute-api.us-east-1.amazonaws.com/default/chercher-par-id" + '?id=' + id , {mode:'cors'})
-        .then(response => response.json())
-        .then(data =>
-          {
+  }
+
+  chercher(id, action){
+    fetch(this.URL + 'chercher-par-id.php' + '?id=' + id)
+      .then(response => response.json())
+      .then(data =>
+        {
             console.log(data);
             let soulier = new Soulier(data.nom,
                                         data.marque,
@@ -40,24 +45,23 @@ class SoulierDAO{
                                         data.id);
             action(soulier);
           });
-    }
-    ajouter(soulier, action){
-      console.log(JSON.stringify(soulier));
-      fetch("https://r6t9t63tck.execute-api.us-east-1.amazonaws.com/default/ajouter",
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type':'application/x-www-form-urlencoded'
-          },
-          body: "soulierjson=" + JSON.stringify(soulier),
-          mode:'cors',
-        })
-        .then(response => response.text())
-        .then(data =>
-          {
-            console.log('Détail:', data);
-            action();
-          });
-    }
   }
-  
+
+  ajouter(soulier, action){
+    fetch(this.URL + 'ajouter.php',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/x-www-form-urlencoded'
+        },
+        body: JSON.stringify(soulier),
+      })
+      .then(response => response.text())
+      .then(data =>
+        {
+          console.log('Détail:', data);
+          action();
+        });
+  }
+
+}
