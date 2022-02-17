@@ -1,6 +1,6 @@
 # Serverless App - Liste de souliers
 
-<details open>
+<details close>
 <summary>Ancienne version</summary>
 <br>
 ## Le projet
