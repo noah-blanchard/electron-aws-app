@@ -1,6 +1,6 @@
 class SoulierDAO{
   constructor(){
-    this.URL = 'http://ec2-52-90-86-49.compute-1.amazonaws.com/souliers/'
+    this.URL = 'http://52.6.196.189/souliers/'
   }
 
   lister(action){
