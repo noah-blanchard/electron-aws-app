@@ -1,4 +1,8 @@
 # Serverless App - Liste de souliers
+
+<details close>
+<summary>Ancienne version</summary>
+<br>
 ## Le projet
 
 Une application de bureau construite avec Electron et un backend serverless AWS
@@ -78,3 +82,4 @@ Ce sont des API à l'écoute des requêtes HTTP.
 
 Lorsque ces portes d'entrée reçoivent une requête, elle déclenche les fonctions Lambda et
 renvoient du contenu au client (l'application électron).
+</details>
