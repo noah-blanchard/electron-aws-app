@@ -77,3 +77,4 @@ class SoulierDAO extends Accesseur implements SoulierSQL
     $demandeModifSoulier->execute();
   }
 }
+?>

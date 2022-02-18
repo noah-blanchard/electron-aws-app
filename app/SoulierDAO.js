@@ -17,7 +17,7 @@ class SoulierDAO{
                                         data[position].couleur,
                                         data[position].materiaux,
                                         data[position].pourQui,
-                                        data[position].pointure,
+                                        data[position].pointures,
                                         data[position].fermeture,
                                         data[position].id);
   
@@ -40,7 +40,7 @@ class SoulierDAO{
                                         data.couleur,
                                         data.materiaux,
                                         data.pourQui,
-                                        data.pointure,
+                                        data.pointures,
                                         data.fermeture,
                                         data.id);
             action(soulier);

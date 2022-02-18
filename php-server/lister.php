@@ -1,5 +1,5 @@
 ﻿<?php
-header('Access-Control-Allow-Origin: *');
+/*header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 header("Access-Control-Allow-Headers: X-Requested-With");
 header('Content-Type: application/json; charset=utf-8');
@@ -11,4 +11,16 @@ if(strlen($listeSoulierJson) > 0){
   echo json_encode($listeSoulier);
 }else{
   echo json_encode([]);
-}
+}*/
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
+header('Content-Type: application/json; charset=utf-8');
+
+require_once("SoulierDAO.php");
+
+$listeSoulier = SoulierDAO::lister();
+echo json_encode($listeSoulier);
+
+?>

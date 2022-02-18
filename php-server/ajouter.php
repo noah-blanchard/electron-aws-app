@@ -1,5 +1,5 @@
 ﻿<?php
-header('Access-Control-Allow-Origin: *');
+/*header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 header("Access-Control-Allow-Headers: X-Requested-With");
 
@@ -21,9 +21,26 @@ if(strlen($listeSoulierJson) > 0){
 
 $listeSoulierJson = json_encode($listeSoulier);
 
-/* Linux
+ Linux
 sudo chgrp www-data liste-soulier.json
 sudo chmod g+w liste-soulier.json
-*/
 
-file_put_contents("liste-soulier.json", $listeSoulierJson);
+
+file_put_contents("liste-soulier.json", $listeSoulierJson);*/
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
+
+require_once "Soulier.php";
+require_once "SoulierDAO.php";
+
+$soulierJSON = file_get_contents('php://input');
+$soulierObjet = json_decode( $soulierJSON );
+$soulier = new Soulier($soulierObjet);
+
+$id = SoulierDAO::ajouter($soulier);
+echo $id;
+
+
+?>
