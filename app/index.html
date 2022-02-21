@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
   <title>Liste de souliers</title>
   <link rel="stylesheet" href="decoration/application.css">
@@ -9,6 +10,7 @@
   <script src="VueSoulier.js"></script>
   <script src="VueListeSoulier.js"></script>
   <script src="VueAjouterSoulier.js"></script>
+  <script src="VueModifierSoulier.js"></script>
   <!--
   https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript#Script_loading_strategies
   Scripts loaded using the defer attribute will run in the order they appear
@@ -17,6 +19,7 @@
   <script defer src="Application.js"></script>
 
 </head>
+
 <body>
   <div id="page-chargement-application">Chargement de l'application liste de souliers</div>
 
@@ -34,6 +37,9 @@
   <script type="plain/text" id="html-vue-soulier">
   <div class="page">
     <h1>Soulier</h1>
+    <div id="modifier-soulier">
+    <a href="#modifier-soulier/{Soulier.id}" class="action">Modifier le soulier</a>
+    </div>
     <h2 id="soulier-nom"></h2>
     <span>Marque</span>
     <p id="soulier-marque"></p>
@@ -51,6 +57,56 @@
     <p id="soulier-couleur"></p>
     <a href="#" class="action">Revenir &agrave; la liste</a>
   </div>
+  </script>
+
+  <script type="plain/text" id="html-modifier-soulier">
+    <div class="page">
+    <h1>Modifier le Soulier</h1>
+    <fieldset>
+      <legend>Identification du soulier</legend>
+      <div>
+        <label for="soulier-nom">Nom</label>
+        <input type="text" id="soulier-nom"/>
+      </div>
+      <div>
+        <label for="soulier-marque">Marque</label>
+        <input type="text" id="soulier-marque"/>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>D&eacute;tails sur le soulier</legend>
+      <div>
+        <label for="soulier-description">Description</label>
+        <textarea id="soulier-description"></textarea>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>caracteristique du soulier</legend>
+      <div>
+        <label for="soulier-pointures">Pointure</label>
+        <input type="text" id="soulier-pointures"></input>
+      </div>
+      <div>
+          <label for="soulier-pourQui">Pour qui</label>
+          <input type="text" id="soulier-pourQui"></input>
+        </div>
+        <div>
+          <label for="soulier-couleur">Couleur</label>
+          <input type="text" id="soulier-couleur"></input>
+        </div>
+        <div>
+          <label for="soulier-materiaux">Materiaux</label>
+          <input type="text" id="soulier-materiaux"></input>
+        </div>
+        <div>
+          <label for="soulier-fermeture">Fermeture</label>
+          <input type="text" id="soulier-fermeture"></input>
+        </div>
+    </fieldset>
+    <input class="action" type="submit" id="enregistrer" value="Valider"/>
+    </form>
+    <a href="#" class="action">Annuler</a>
+    </div>
   </script>
 
   <script type="plain/text" id="html-vue-ajouter-soulier">
@@ -105,4 +161,5 @@
   </script>
 
 </body>
+
 </html>

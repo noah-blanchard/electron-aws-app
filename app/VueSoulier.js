@@ -9,6 +9,12 @@ class VueSoulier{
     }
   
     afficher(){
+
+      /*let HTMLReplacement = document.getElementById("modifier-soulier").innerHTML;
+      console.log(HTMLReplacement);
+      HTMLReplacement = HTMLReplacement.replace("{Soulier.id}", this.soulier.id);
+      document.getElementById("modifier-soulier").innerHTML = HTMLReplacement;*/
+
       document.getElementsByTagName("body")[0].innerHTML = this.html;
       document.getElementById("soulier-nom").innerHTML = this.soulier.nom;
       document.getElementById("soulier-marque").innerHTML = this.soulier.marque;
@@ -18,7 +24,12 @@ class VueSoulier{
       document.getElementById("soulier-fermeture").innerHTML = this.soulier.fermeture;
       document.getElementById("soulier-materiaux").innerHTML = this.soulier.materiaux;
       document.getElementById("soulier-couleur").innerHTML = this.soulier.couleur;
-      document.getElementById("soulier-id").innerHTML = this.soulier.id;
+      document.getElementById("modifier-soulier").innerHTML.replace("{Soulier.id}", this.soulier.id);
+      let HTMLReplacement = document.getElementById("modifier-soulier").innerHTML;
+      console.log(HTMLReplacement);
+      HTMLReplacement = HTMLReplacement.replace("{Soulier.id}", this.soulier.id);
+      document.getElementById("modifier-soulier").innerHTML = HTMLReplacement;
+
     }
   
   }

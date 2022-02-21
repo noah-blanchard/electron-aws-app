@@ -1,11 +1,13 @@
 class Application {
-  constructor(window, vueListeSoulier, vueSoulier, vueAjouterSoulier, soulierDAO){
+  constructor(window, vueListeSoulier, vueSoulier, vueAjouterSoulier, vueModifierSoulier, soulierDAO){
 
     this.window = window;
 
     this.vueListeSoulier = vueListeSoulier;
 
     this.vueSoulier = vueSoulier;
+
+    this.vueModifierSoulier = vueModifierSoulier
 
     this.vueAjouterSoulier = vueAjouterSoulier;
     // C'est l'équivalent de function(soulier){this.ajouterSoulier(soulier)}
@@ -22,6 +24,8 @@ class Application {
   naviguer(){
     let hash = window.location.hash;
 
+    console.log(hash);
+
     if(!hash){
 
       this.soulierDAO.lister((listeSoulier) => this.afficherNouvelleListeSoulier(listeSoulier));
@@ -29,6 +33,15 @@ class Application {
     }else if(hash.match(/^#ajouter-soulier/)){
 
       this.vueAjouterSoulier.afficher();
+    
+    }else if(hash.match(/^#modifier-soulier\/[0-9]/)){
+
+      console.log("OKOKOK2");
+
+      let idSoulier = parseInt(hash.split("/")[1]);
+
+
+      this.soulierDAO.chercher(idSoulier, (soulier) => this.affichierModifierSoulier(soulier));
 
     }else{
 
@@ -37,6 +50,12 @@ class Application {
 
       this.soulierDAO.chercher(idSoulier, (soulier) => this.afficherNouveauSoulier(soulier));
     }
+  }
+
+  affichierModifierSoulier(soulier){
+    console.log("Changement de Page");
+    this.vueModifierSoulier.initialiserSoulier(soulier);
+    this.vueModifierSoulier.afficher();
   }
 
   afficherNouvelleListeSoulier(listeSoulier){
@@ -61,5 +80,5 @@ class Application {
   }
 }
 
-new Application(window, new VueListeSoulier(), new VueSoulier(), new VueAjouterSoulier(), new SoulierDAO());
+new Application(window, new VueListeSoulier(), new VueSoulier(), new VueAjouterSoulier(), new VueModifierSoulier(), new SoulierDAO());
 
