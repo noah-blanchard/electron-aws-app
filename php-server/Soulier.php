@@ -4,14 +4,14 @@ class Soulier implements JsonSerializable
     public static $filtres =
     array(
         'id' => FILTER_VALIDATE_INT,
-        'nom' => FILTER_SANITIZE_ENCODED,
-        'marque' => FILTER_SANITIZE_ENCODED,
-        'description' => FILTER_SANITIZE_ENCODED,
-        'pointures' => FILTER_SANITIZE_ENCODED,
-        'fermeture' => FILTER_SANITIZE_ENCODED,
-        'couleur' => FILTER_SANITIZE_ENCODED,
-        'materiaux' => FILTER_SANITIZE_ENCODED,
-        'pourQui' => FILTER_SANITIZE_ENCODED
+        'nom' => FILTER_FLAG_ENCODE_HIGH,
+        'marque' => FILTER_FLAG_ENCODE_HIGH,
+        'description' => FILTER_FLAG_ENCODE_HIGH,
+        'pointures' => FILTER_FLAG_ENCODE_HIGH,
+        'fermeture' => FILTER_FLAG_ENCODE_HIGH,
+        'couleur' => FILTER_FLAG_ENCODE_HIGH,
+        'materiaux' => FILTER_FLAG_ENCODE_HIGH,
+        'pourQui' => FILTER_FLAG_ENCODE_HIGH
     );
 
     protected $id;
