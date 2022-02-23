@@ -41,14 +41,6 @@ CREATE TABLE `soulier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 ```
 
-### Requête SQL d'insertion d'un soulier dans la table "soulier"
-
-
-### Requête SQL de recherche par ID
-
-```sql
-SELECT * FROM `soulier` WHERE id = 1;
-```
 ## Fonctionnalités
 
 Le projet propose quatres écrans distincts.
@@ -57,6 +49,12 @@ Le projet propose quatres écrans distincts.
 
 Afficher tous les souliers présents dans la base de données. On ne montre sur cet écran que le nom du soulier.
 On peut cliquer sur chaque soulier afin d'accéder au second écran.
+
+#### Requpete SQL de listage des souliers
+
+```sql
+SELECT * FROM `soulier`;
+```
 
 ### Détail des souliers
 
@@ -87,6 +85,17 @@ INSERT INTO `soulier`
 
 Lorsqu'on accède à la page des détails d'un soulier, un bouton propose à l'utilisateur de modifier le soulier en question
 en cas de changement à faire sur les infos du souliers (nom, marque, pointures...)
+
+#### Requête SQL de modification d'un soulier
+
+```sql
+UPDATE `soulier` SET
+`nom` = '{Nom]', `marque` = '{Marque}',
+`description` = '{Description}', `pointures` = '{Pointure}',
+`fermeture` = '{Fermeture}', `couleur` = '{Couleur}',
+`materiaux` = '{Materiaux}', `pourQui` = '{Pour Qui}'
+WHERE `soulier`.`id` = {ID du Soulier}; 
+```
 
 ## Ancienne version de l'application
 <details close>
