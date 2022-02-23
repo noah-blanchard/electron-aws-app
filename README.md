@@ -63,14 +63,19 @@ CREATE TABLE `soulier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 ```
 
-### Code d'insertion d'un soulier dans la table "soulier"
+### Requête SQL d'insertion d'un soulier dans la table "soulier"
 
 ```sql
 INSERT INTO `soulier`
     (`id`, `nom`, `marque`, `description`, `pointures`, `fermeture`, `couleur`, `materiaux`, `pourQui`)
-    VALUES (NULL, 'Air Max 95', 'Nike','De beaux souliers', 'Du 34 au 48', 'Lacets', 'Bleu, Rouge, Jaune, Blanc, Noir, Gris',
+    VALUES (1, 'Air Max 95', 'Nike','De beaux souliers', 'Du 34 au 48', 'Lacets', 'Bleu, Rouge, Jaune, Blanc, Noir, Gris',
     'Plastique, Tissus, Cotton, Polyester', 'Hommes, Femmes, Enfants'
 );
+```
+### Requête SQL de recherche par ID
+
+```sql
+SELECT * FROM `soulier` WHERE id = 1;
 ```
 
 Une migration vers 
