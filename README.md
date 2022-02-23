@@ -68,7 +68,8 @@ CREATE TABLE `soulier` (
 ```sql
 INSERT INTO `soulier`
     (`id`, `nom`, `marque`, `description`, `pointures`, `fermeture`, `couleur`, `materiaux`, `pourQui`)
-    VALUES (NULL, 'Air Max 95', 'Nike', 'De beaux souliers', 'Du 34 au 48', 'Lacets', 'Bleu, Rouge, Jaune, Blanc, Noir, Gris', 'Plastique, Tissus, Cotton, Polyester',     'Hommes, Femmes, Enfants'
+    VALUES (NULL, 'Air Max 95', 'Nike','De beaux souliers', 'Du 34 au 48', 'Lacets', 'Bleu, Rouge, Jaune, Blanc, Noir, Gris',
+    'Plastique, Tissus, Cotton, Polyester', 'Hommes, Femmes, Enfants'
 );
 ```
 
