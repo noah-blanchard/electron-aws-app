@@ -97,6 +97,18 @@ UPDATE `soulier` SET
 WHERE `soulier`.`id` = {ID du Soulier}; 
 ```
 
+## API PHP
+
+Du code PHP est stockée sur la machine ubuntu. Ce code est accessible grâce à une adresse IP précise, lorsque le code est lancé,
+des requêtes vers la base de données sont effectuées selon l'endpoint qui a été appelé.
+
+### Endpoints
+
+* Lister (GET) : http://52.6.196.189/souliers/lister.php
+* Chercher par id (GET) : http://52.6.196.189/souliers/chercher-par-id.php?id={id}
+* Ajouter (POST) : http://52.6.196.189/souliers/ajouter.php
+* Modifier (POST) : http://52.6.196.189/souliers/modifier.php
+
 ## Ancienne version de l'application
 <details close>
 <summary>Ancienne version</summary>
