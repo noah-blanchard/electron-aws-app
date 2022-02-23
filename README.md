@@ -1,4 +1,4 @@
-# Serverless App - Liste de souliers
+# Electron App - Liste de souliers
 
 ## Le projet
 
@@ -30,6 +30,18 @@ L'utilisateur entre toutes les informations relatives au soulier et valide avec 
 
 Lorsqu'on accède à la page des détails d'un soulier, un bouton propose à l'utilisateur de modifier le soulier en question
 en cas de changement à faire sur les infos du souliers (nom, marque, pointures...)
+
+## Amazon Elastic Compute Cloud (EC2)
+
+Une migration vers EC2 a été fait, le projet tourne maintenant sur un VPS ubuntu sur lequel PHP et Apache sont installés.
+Nous n'utilisons donc plus les services Lambdas et API Gateway d'AWS mais seulement une adresse IP Elastique pointant sur le dossier
+publique de la machine ubuntu.
+
+<img src="https://pedalsup.com/wp-content/uploads/2021/08/b57774c.png"></img>
+
+## Amazon Relational Database Service (RDS)
+
+Une migration vers 
 
 <details close>
 <summary>Ancienne version</summary>
