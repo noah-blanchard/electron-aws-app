@@ -52,7 +52,6 @@ INSERT INTO `soulier`
 ```
 ### Requête SQL de recherche par ID
 
-Chercher par ID :
 ```sql
 SELECT * FROM `soulier` WHERE id = 1;
 ```
@@ -72,6 +71,9 @@ En cliquant sur un des souliers listé sur la première page, on accède à la p
 
 <details close>
   <summary>Requête SQL adaptée</summary>
+  
+  Chercher par ID :
+  
   ```sql
   SELECT * FROM `soulier` WHERE id = 1;
    ```
