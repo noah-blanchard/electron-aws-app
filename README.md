@@ -69,12 +69,12 @@ On peut cliquer sur chaque soulier afin d'accéder au second écran.
 Chaque soulier dipose de détail supplémentaire (marque, pointure, à qui il est destiné, les matériaux, la couleur...).
 En cliquant sur un des souliers listé sur la première page, on accède à la page correspondant à ses détails.
 
-<detail close>
+<details close>
   <summary>Requête SQL adaptée</summary>
   ```sql
   SELECT * FROM `soulier` WHERE id = 1;
    ```
-</detail>
+</details>
 
 ### Ajouter un soulier
 
