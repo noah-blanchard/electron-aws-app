@@ -33,13 +33,44 @@ en cas de changement à faire sur les infos du souliers (nom, marque, pointures.
 
 ## Amazon Elastic Compute Cloud (EC2)
 
-Une migration vers EC2 a été fait, le projet tourne maintenant sur un VPS ubuntu sur lequel PHP et Apache sont installés.
+Une migration vers EC2 a été faite, le projet tourne maintenant sur un VPS ubuntu sur lequel PHP et Apache sont installés.
 Nous n'utilisons donc plus les services Lambdas et API Gateway d'AWS mais seulement une adresse IP Elastique pointant sur le dossier
-publique de la machine ubuntu.
+public de la machine ubuntu. Les endpoints sont donc des fichiers PHP chargés de faire une des requêtes SQL vers une base de données
+relationnelle.
 
 <img src="https://pedalsup.com/wp-content/uploads/2021/08/b57774c.png"></img>
 
 ## Amazon Relational Database Service (RDS)
+
+Une base de donnée relationnelle fournie par Amazon RDS a été installée sur la machine ubuntu, elle représente dorénavant la méthode de
+stockage de la liste de soulier. Nous n'utilisons donc plus de bucket S3 et de fichier JSON. Les base de données relationnelles représente un
+réel avantage pour le stockage de données, et la possibilité de trier, modifier ou supprimer ces données sans difficulté par le biais de
+requête SQL.
+
+### Requête SQL de créationd de la table "soulier"
+
+```sql
+CREATE TABLE `soulier` (
+  `id` int NOT NULL,
+  `nom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `marque` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pointures` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `fermeture` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `couleur` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `materiaux` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pourQui` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+```
+
+### Code d'insertion d'un soulier dans la table "soulier"
+
+```sql
+INSERT INTO `soulier`
+    (`id`, `nom`, `marque`, `description`, `pointures`, `fermeture`, `couleur`, `materiaux`, `pourQui`)
+    VALUES (NULL, 'Air Max 95', 'Nike', 'De beaux souliers', 'Du 34 au 48', 'Lacets', 'Bleu, Rouge, Jaune, Blanc, Noir, Gris', 'Plastique, Tissus, Cotton, Polyester',     'Hommes, Femmes, Enfants'
+);
+```
 
 Une migration vers 
 
