@@ -38,7 +38,7 @@ Nous n'utilisons donc plus les services Lambdas et API Gateway d'AWS mais seulem
 public de la machine ubuntu. Les endpoints sont donc des fichiers PHP chargés de faire une des requêtes SQL vers une base de données
 relationnelle.
 
-<img src="https://pedalsup.com/wp-content/uploads/2021/08/b57774c.png"></img>
+<img src="https://pedalsup.com/wp-content/uploads/2021/08/b57774c.png" alt="Logo EC2"></img>
 
 ## Amazon Relational Database Service (RDS)
 
@@ -46,6 +46,8 @@ Une base de donnée relationnelle fournie par Amazon RDS a été installée sur 
 stockage de la liste de soulier. Nous n'utilisons donc plus de bucket S3 et de fichier JSON. Les base de données relationnelles représente un
 réel avantage pour le stockage de données, et la possibilité de trier, modifier ou supprimer ces données sans difficulté par le biais de
 requête SQL.
+
+<img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto/v1640851977/hevo-blog/Redshift-vs-RDS-RDS-Logo.png" alt="Logo RDS"></img>
 
 ### Requête SQL de créationd de la table "soulier"
 
@@ -79,7 +81,7 @@ SELECT * FROM `soulier` WHERE id = 1;
 ```
 
 
-##Ancienne version de l'application
+## Ancienne version de l'application
 <details close>
 <summary>Ancienne version</summary>
 <br>
