@@ -52,6 +52,7 @@ INSERT INTO `soulier`
 ```
 ### Requête SQL de recherche par ID
 
+Chercher par ID :
 ```sql
 SELECT * FROM `soulier` WHERE id = 1;
 ```
