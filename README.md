@@ -43,13 +43,7 @@ CREATE TABLE `soulier` (
 
 ### Requête SQL d'insertion d'un soulier dans la table "soulier"
 
-```sql
-INSERT INTO `soulier`
-    (`id`, `nom`, `marque`, `description`, `pointures`, `fermeture`, `couleur`, `materiaux`, `pourQui`)
-    VALUES (1, 'Air Max 95', 'Nike','De beaux souliers', 'Du 34 au 48', 'Lacets', 'Bleu, Rouge, Jaune, Blanc, Noir, Gris',
-    'Plastique, Tissus, Cotton, Polyester', 'Hommes, Femmes, Enfants'
-);
-```
+
 ### Requête SQL de recherche par ID
 
 ```sql
@@ -69,20 +63,25 @@ On peut cliquer sur chaque soulier afin d'accéder au second écran.
 Chaque soulier dipose de détail supplémentaire (marque, pointure, à qui il est destiné, les matériaux, la couleur...).
 En cliquant sur un des souliers listé sur la première page, on accède à la page correspondant à ses détails.
 
-<details close>
-  <summary>Requête SQL adaptée</summary>
-  
-  Chercher par ID :
-  
-  ```sql
-  SELECT * FROM `soulier` WHERE id = 1;
-   ```
-</details>
+#### Requête SQL de recherche par ID
+```sql
+SELECT * FROM `soulier` WHERE id = {ID du Soulier};
+```
 
 ### Ajouter un soulier
 
 Il est possible d'ajouter un nouveau soulier à la liste qui sera alors sauvegardé dans le compartiment S3.
 L'utilisateur entre toutes les informations relatives au soulier et valide avec le bouton prévu à cet effet.
+
+#### Requête SQL d'insertion de soulier
+
+```sql
+INSERT INTO `soulier`
+    (`id`, `nom`, `marque`, `description`, `pointures`, `fermeture`, `couleur`, `materiaux`, `pourQui`)
+    VALUES (1, 'Air Max 95', 'Nike','De beaux souliers', 'Du 34 au 48', 'Lacets', 'Bleu, Rouge, Jaune, Blanc, Noir, Gris',
+    'Plastique, Tissus, Cotton, Polyester', 'Hommes, Femmes, Enfants'
+);
+```
 
 ### Modifier un soulier
 
