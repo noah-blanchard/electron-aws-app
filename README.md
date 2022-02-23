@@ -78,8 +78,8 @@ INSERT INTO `soulier`
 SELECT * FROM `soulier` WHERE id = 1;
 ```
 
-Une migration vers 
 
+##Ancienne version de l'application
 <details close>
 <summary>Ancienne version</summary>
 <br>
