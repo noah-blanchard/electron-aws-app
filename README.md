@@ -7,30 +7,6 @@ Une application de bureau construite avec Electron et un backend tournant sur Am
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/1200px-Electron_Software_Framework_Logo.svg.png" alt="drawing" width="100" style="margin:70px"/>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png" alt="drawing" width="100" style="margin:70px"/>
 
-## Fonctionnalités
-
-Le projet propose quatres écrans distincts.
-
-### Lister
-
-Afficher tous les souliers présents dans le compartiment S3. On ne montre sur cet écran que le nom du soulier.
-On peut cliquer sur chaque soulier afin d'accéder au second écran.
-
-### Détail des souliers
-
-Chaque soulier dipose de détail supplémentaire (marque, pointure, à qui il est destiné, les matériaux, la couleur...).
-En cliquant sur un des souliers listé sur la première page, on accède à la page correspondant à ses détails.
-
-### Ajouter un soulier
-
-Il est possible d'ajouter un nouveau soulier à la liste qui sera alors sauvegardé dans le compartiment S3.
-L'utilisateur entre toutes les informations relatives au soulier et valide avec le bouton prévu à cet effet.
-
-### Modifier un soulier
-
-Lorsqu'on accède à la page des détails d'un soulier, un bouton propose à l'utilisateur de modifier le soulier en question
-en cas de changement à faire sur les infos du souliers (nom, marque, pointures...)
-
 ## Amazon Elastic Compute Cloud (EC2)
 
 Une migration vers EC2 a été faite, le projet tourne maintenant sur un VPS ubuntu sur lequel PHP et Apache sont installés.
@@ -79,7 +55,36 @@ INSERT INTO `soulier`
 ```sql
 SELECT * FROM `soulier` WHERE id = 1;
 ```
+## Fonctionnalités
 
+Le projet propose quatres écrans distincts.
+
+### Lister
+
+Afficher tous les souliers présents dans la base de données. On ne montre sur cet écran que le nom du soulier.
+On peut cliquer sur chaque soulier afin d'accéder au second écran.
+
+### Détail des souliers
+
+Chaque soulier dipose de détail supplémentaire (marque, pointure, à qui il est destiné, les matériaux, la couleur...).
+En cliquant sur un des souliers listé sur la première page, on accède à la page correspondant à ses détails.
+
+<detail close>
+  <summary>Requête SQL adaptée</summary>
+  ```sql
+  SELECT * FROM `soulier` WHERE id = 1;
+   ```
+</detail>
+
+### Ajouter un soulier
+
+Il est possible d'ajouter un nouveau soulier à la liste qui sera alors sauvegardé dans le compartiment S3.
+L'utilisateur entre toutes les informations relatives au soulier et valide avec le bouton prévu à cet effet.
+
+### Modifier un soulier
+
+Lorsqu'on accède à la page des détails d'un soulier, un bouton propose à l'utilisateur de modifier le soulier en question
+en cas de changement à faire sur les infos du souliers (nom, marque, pointures...)
 
 ## Ancienne version de l'application
 <details close>
