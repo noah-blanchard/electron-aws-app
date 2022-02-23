@@ -9,7 +9,7 @@ Une application de bureau construite avec Electron et un backend tournant sur Am
 
 ## Fonctionnalités
 
-Le projet propose trois écrans distincts.
+Le projet propose quatres écrans distincts.
 
 ### Lister
 
