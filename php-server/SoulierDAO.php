@@ -64,6 +64,10 @@ class SoulierDAO extends Accesseur implements SoulierSQL
 
   public static function modifier($soulier)
   {
+    SoulierDAO::initialiser();
+
+    //echo var_dump($soulier);
+
     $demandeModifSoulier = SoulierDAO::$baseDeDonnees->prepare(SoulierDAO::SQL_MODIFIER);
     $demandeModifSoulier->bindValue(':nom', $soulier->nom, PDO::PARAM_STR);
     $demandeModifSoulier->bindValue(':marque', $soulier->marque, PDO::PARAM_STR);
@@ -75,6 +79,7 @@ class SoulierDAO extends Accesseur implements SoulierSQL
     $demandeModifSoulier->bindValue(':pourQui', $soulier->pourQui, PDO::PARAM_STR);
     $demandeModifSoulier->bindValue(':id', $soulier->id, PDO::PARAM_INT);
     $demandeModifSoulier->execute();
+    return SoulierDAO::$baseDeDonnees->lastInsertId();
   }
 }
 ?>

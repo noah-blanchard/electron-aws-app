@@ -27,7 +27,7 @@ class Soulier implements JsonSerializable
     public function __construct($soulierObjet)
     {
         $tableau = filter_var_array((array) $soulierObjet, Soulier::$filtres);
-        $this->id = $tableau['id'];
+        $this->id = intval($tableau['id']);
         $this->nom = $tableau['nom'];
         $this->marque = $tableau['marque'];
         $this->description = $tableau['description'];

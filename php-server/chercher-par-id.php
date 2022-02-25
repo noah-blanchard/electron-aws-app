@@ -26,8 +26,8 @@ header('Content-Type: application/json; charset=utf-8');
 require_once "Soulier.php";
 require_once("SoulierDAO.php");
 
-$cadeau = new Soulier($_GET);
-$cadeau = SoulierDAO::chercherParId($cadeau->id);
-echo json_encode($cadeau);
+$soulier = new Soulier($_GET);
+$soulier = SoulierDAO::chercherParId($soulier->id);
+echo json_encode($soulier);
 
 ?>

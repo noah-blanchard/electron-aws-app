@@ -26,6 +26,7 @@ class VueAjouterSoulier{
       let pointures = document.getElementById("soulier-pointures").value;
   
       this.ajouterSoulier(new Soulier(nom, marque, description, couleur, materiaux, pourQui, pointures, fermeture,  null));
+      
   
     }
   

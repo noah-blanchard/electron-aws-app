@@ -9,9 +9,14 @@ class Application {
 
     this.vueModifierSoulier = vueModifierSoulier
 
+    // C'est l'équivalent de function(soulier){this.ajouterSoulier(soulier)}
+    //this.vueModifierSoulier.initialiserSoulier(soulier => this.modifierSoulier(soulier));
+
     this.vueAjouterSoulier = vueAjouterSoulier;
+
     // C'est l'équivalent de function(soulier){this.ajouterSoulier(soulier)}
     this.vueAjouterSoulier.initialiserAjouterSoulier(soulier =>this.ajouterSoulier(soulier));
+    
 
     this.soulierDAO = soulierDAO;
 
@@ -35,8 +40,6 @@ class Application {
       this.vueAjouterSoulier.afficher();
     
     }else if(hash.match(/^#modifier-soulier\/[0-9]/)){
-
-      console.log("OKOKOK2");
 
       let idSoulier = parseInt(hash.split("/")[1]);
 
