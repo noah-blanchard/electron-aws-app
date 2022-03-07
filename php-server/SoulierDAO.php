@@ -13,7 +13,7 @@ class Accesseur
     $usager = 'noah';
     $motDePasse = 'soulier123';
     $nomDeSourceDeDonnees = 'mysql:dbname=' . $base . ';host=' . $hote;
-    SoulierDAO::$baseDeDonnees = new PDO($nomDeSourceDeDonnees, $usager, $motDePasse);
+    SoulierDAO::$baseDeDonnees = new PDO($nomDeSourceDeDonnees . ";charset=utf8mb4;", $usager, $motDePasse);
     SoulierDAO::$baseDeDonnees->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
 }
@@ -67,6 +67,7 @@ class SoulierDAO extends Accesseur implements SoulierSQL
     SoulierDAO::initialiser();
 
     //echo var_dump($soulier);
+
 
     $demandeModifSoulier = SoulierDAO::$baseDeDonnees->prepare(SoulierDAO::SQL_MODIFIER);
     $demandeModifSoulier->bindValue(':nom', $soulier->nom, PDO::PARAM_STR);

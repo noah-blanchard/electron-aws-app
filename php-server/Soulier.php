@@ -4,25 +4,25 @@ class Soulier implements JsonSerializable
     public static $filtres =
     array(
         'id' => FILTER_VALIDATE_INT,
-        'nom' => FILTER_FLAG_ENCODE_HIGH,
-        'marque' => FILTER_FLAG_ENCODE_HIGH,
-        'description' => FILTER_FLAG_ENCODE_HIGH,
-        'pointures' => FILTER_FLAG_ENCODE_HIGH,
-        'fermeture' => FILTER_FLAG_ENCODE_HIGH,
-        'couleur' => FILTER_FLAG_ENCODE_HIGH,
-        'materiaux' => FILTER_FLAG_ENCODE_HIGH,
-        'pourQui' => FILTER_FLAG_ENCODE_HIGH
+        'nom' => FILTER_SANITIZE_STRING,
+        'marque' => FILTER_SANITIZE_STRING,
+        'description' => FILTER_SANITIZE_STRING,
+        'pointures' => FILTER_SANITIZE_STRING,
+        'fermeture' => FILTER_SANITIZE_STRING,
+        'couleur' => FILTER_SANITIZE_STRING,
+        'materiaux' => FILTER_SANITIZE_STRING,
+        'pourQui' => FILTER_SANITIZE_STRING
     );
 
-    protected $id;
-    protected $nom;
-    protected $marque;
-    protected $description;
-    protected $pointures;
-    protected $fermeture;
-    protected $couleur;
-    protected $materiaux;
-    protected $pourQui;
+    public $id;
+    public $nom;
+    public $marque;
+    public $description;
+    public $pointures;
+    public $fermeture;
+    public $couleur;
+    public $materiaux;
+    public $pourQui;
 
     public function __construct($soulierObjet)
     {
@@ -36,6 +36,7 @@ class Soulier implements JsonSerializable
         $this->couleur = $tableau['couleur'];
         $this->materiaux = $tableau['materiaux'];
         $this->pourQui = $tableau['pourQui'];
+        
     }
 
     public function __set($propriete, $valeur)

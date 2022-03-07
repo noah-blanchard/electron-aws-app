@@ -7,7 +7,6 @@ class SoulierDAO {
     fetch(this.URL + 'lister.php')
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         let listeSoulier = [];
         for (let position in data) {
           let soulier = new Soulier(data[position].nom,
@@ -20,7 +19,6 @@ class SoulierDAO {
             data[position].fermeture,
             data[position].id);
 
-          console.log(soulier);
           listeSoulier.push(soulier);
         }
         action(listeSoulier);
@@ -31,7 +29,6 @@ class SoulierDAO {
     fetch(this.URL + 'chercher-par-id.php' + '?id=' + id)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         let soulier = new Soulier(data.nom,
           data.marque,
           data.description,
@@ -46,6 +43,7 @@ class SoulierDAO {
   }
 
   ajouter(soulier, action) {
+    console.log(JSON.stringify(soulier));
     fetch(this.URL + 'ajouter.php',
       {
         method: 'POST',
@@ -56,7 +54,6 @@ class SoulierDAO {
       })
       .then(response => response.text())
       .then(data => {
-        console.log('Détail:', data);
         action();
       });
   }
@@ -72,7 +69,7 @@ class SoulierDAO {
       })
       .then(response => response.text())
       .then(data => {
-        console.log('Détail:', data);
+        console.log(data);
         action();
       });
   }

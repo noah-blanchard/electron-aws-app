@@ -1,12 +1,16 @@
 class VueModifierSoulier{
     constructor(){
       this.html = document.getElementById("html-modifier-soulier").innerHTML;
-      
-      this.soulier = null;
+      this.modifierSoulier = null;
+      this.soulier = null
     }
-  
+
     initialiserSoulier(soulier){
       this.soulier = soulier;
+    }
+  
+    initialiserModifierSoulier(modifierSoulier){
+      this.modifierSoulier = modifierSoulier;
     }
   
     afficher(){
@@ -34,7 +38,7 @@ class VueModifierSoulier{
       this.soulier.pourQui = document.getElementById("soulier-pourQui").value;
       this.soulier.pointures = document.getElementById("soulier-pointures").value;
 
-      
+      this.modifierSoulier(this.soulier);
       
 
     }
